@@ -1,0 +1,6 @@
+com.mytests.spring.customSpringBootStarter.autoConfigurations.MainCustomAutoConfiguration
+com.mytests.spring.customSpringBootStarter.autoConfigurations.OneAutoConfiguration
+com.mytests.spring.customSpringBootStarter.autoConfigurations.TwoAutoConfiguration
+com.mytests.spring.customSpringBootStarter.autoConfigurations.Foo$NestedAutoConfiguration
+com.mytests.spring.customSpringBootStarter.autoConfigurations.ReplacementAutoConfiguration
+

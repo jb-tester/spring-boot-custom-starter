@@ -1,0 +1,3 @@
+com.mytests.spring.customimportedspringbootstarter.LibAutoConfiguration
+optional:com.mytests.spring.customimportedspringbootstarter.OptionalAutoConfiguration
+optional:com.mytests.spring.customSpringBootStarter.customAutoconfigurations.UnConditionalConfiguration

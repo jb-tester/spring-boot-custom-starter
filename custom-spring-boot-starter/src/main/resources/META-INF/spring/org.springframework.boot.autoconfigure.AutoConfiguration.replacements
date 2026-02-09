@@ -1,0 +1,1 @@
+com.mytests.spring.customSpringBootStarter.autoConfigurations.DeprecatedAutoConfiguration=com.mytests.spring.customSpringBootStarter.autoConfigurations.ReplacementAutoConfiguration

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 
-@AutoConfiguration(after = OneAutoConfiguration.class)
+@AutoConfiguration(afterName = "com.mytests.spring.customSpringBootStarter.autoConfigurations.OneAutoConfiguration")
 public class TwoAutoConfiguration {
     @Bean @ConditionalOnBean(name = "myBeanOne")
     public BeanFromConfigTwo myBeanTwo(BeanFromConfigOne myBeanOne) {

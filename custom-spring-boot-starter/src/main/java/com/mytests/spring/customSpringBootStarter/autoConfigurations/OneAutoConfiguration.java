@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 
-@AutoConfiguration(after= DeprecatedAutoConfiguration.class, before = TwoAutoConfiguration.class)
+@AutoConfiguration(after= DeprecatedAutoConfiguration.class, beforeName = "com.mytests.spring.customSpringBootStarter.autoConfigurations.TwoAutoConfiguration")
 public class OneAutoConfiguration {
 
     @Bean @ConditionalOnBean(BeanFromDeprecatedAndReplacedConfig.class)

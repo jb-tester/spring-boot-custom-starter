@@ -9,6 +9,7 @@ What is tested:
  - custom autoconfiguration annotation and corresponding `*.imports` file - OK
  - optional: prefix for the autoconfigurations in the `*.imports` file - OK
  - inner autoconfigurations - problem with gutter icon
+ - configurations from different module - OK, but these configurations registered the `imports` file miss the corresponding gutter icon action
  - before/after conditions - no inspections that check their correctness
  - beforeName/afterName conditions - no references/completion for names
  - autoconfiguration replacement, `org.springframework.boot.autoconfigure.AutoConfiguration.replacements` file - not supported

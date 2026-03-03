@@ -4,6 +4,7 @@ import com.mytests.spring.customSpringBootStarter.beans.BeanFromConfigOne;
 import com.mytests.spring.customSpringBootStarter.beans.BeanFromConfigTwo;
 import com.mytests.spring.customSpringBootStarter.beans.BeanFromDeprecatedAndReplacedConfig;
 import com.mytests.spring.customSpringBootStarter.beans.BeanFromNestedConfig;
+import com.mytests.spring.customimportedspringbootstarter.LibBean0;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,8 @@ public class UseBeansFromAutoconfiguration {
     private BeanFromNestedConfig beanFromNestedConfig;
     @Autowired(required = false)
     private BeanFromDeprecatedAndReplacedConfig replacementBean;
+    @Autowired(required = false)
+    private LibBean0 libBean0;
 
     public String getBeanOne() {
         if (beanOne == null) {
@@ -48,6 +51,10 @@ public class UseBeansFromAutoconfiguration {
         return replacementBean.toString();
     }
 
+    public LibBean0 getLibBean0() {
+        return libBean0;
+    }
+
     @Override
     public String toString() {
         return "UseBeansFromAutoconfiguration{" +
@@ -55,6 +62,7 @@ public class UseBeansFromAutoconfiguration {
                ", beanTwo is " + getBeanTwo() +
                ", beanFromNestedConfig is " + getBeanFromNestedConfig() +
                ", replacementBean is " + getReplacementBean() +
+               ", bean from another module is " + getLibBean0() +
                '}';
     }
 }

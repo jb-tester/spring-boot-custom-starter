@@ -24,14 +24,14 @@ public class UseBeansFromCustomEnabler {
 
     public String getOptionalBean() {
         if (optionalBean == null) {
-            return "not autowired";
+            return "** not autowired **";
         }
         return optionalBean.toString();
     }
 
     public String getMyLibBean() {
-        if (optionalBean == null) {
-            return "not autowired";
+        if (myLibBean == null) {
+            return "** not autowired **";
         }
         return myLibBean.toString();
     }

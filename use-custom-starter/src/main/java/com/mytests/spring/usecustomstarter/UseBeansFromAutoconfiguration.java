@@ -8,51 +8,41 @@ import com.mytests.spring.customimportedspringbootstarter.LibBean0;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 
 @Component
 public class UseBeansFromAutoconfiguration {
 
-    @Autowired(required = false)
-    BeanFromConfigOne beanOne;
-    @Autowired(required = false)
-    private BeanFromConfigTwo beanTwo;
-    @Autowired(required = false)
-    private BeanFromNestedConfig beanFromNestedConfig;
-    @Autowired(required = false)
-    private BeanFromDeprecatedAndReplacedConfig replacementBean;
-    @Autowired(required = false)
-    private LibBean0 libBean0;
+    @Autowired
+    Optional<BeanFromConfigOne> beanOne;
+    @Autowired
+    private Optional<BeanFromConfigTwo> beanTwo;
+    @Autowired
+    private Optional<BeanFromNestedConfig> beanFromNestedConfig;
+    @Autowired
+    private Optional<BeanFromDeprecatedAndReplacedConfig> replacementBean;
+    @Autowired
+    private Optional<LibBean0> libBean0;
 
     public String getBeanOne() {
-        if (beanOne == null) {
-            return "not autowired";
-        }
-        return beanOne.getStr();
+        return beanOne.map(BeanFromConfigOne::getStr).orElse("not autowired");
     }
 
     public String getBeanTwo() {
-        if (beanTwo == null) {
-            return "not autowired";
-        }
-        return beanTwo.toString();
+        return beanTwo.map(Object::toString).orElse("not autowired");
     }
 
     public String getBeanFromNestedConfig() {
-        if (beanFromNestedConfig == null) {
-            return "not autowired";
-        }
-        return beanFromNestedConfig.toString();
+        return beanFromNestedConfig.map(Object::toString).orElse("not autowired");
     }
 
     public String getReplacementBean() {
-        if (replacementBean == null) {
-            return "not autowired";
-        }
-        return replacementBean.toString();
+        return replacementBean.map(Object::toString).orElse("not autowired");
     }
 
     public LibBean0 getLibBean0() {
-        return libBean0;
+        return libBean0.orElse(null);
     }
 
     @Override

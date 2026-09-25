@@ -6,6 +6,8 @@ import com.mytests.spring.customimportedspringbootstarter.OptionalBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 
 @Component
 public class UseBeansFromCustomEnabler {
@@ -13,34 +15,25 @@ public class UseBeansFromCustomEnabler {
     // all those beans are available only if
     // the @AutoconfigureCustom annotation is present
 
-    @Autowired(required = false) // present if property custom.props.prop1=foo
-    private OptionalBean optionalBean;
+    @Autowired // present if property custom.props.prop1=foo
+    private Optional<OptionalBean> optionalBean;
 
-    @Autowired(required = false) // present if property custom.props.prop2=bar
-    private LibBean myLibBean;
+    @Autowired // present if property custom.props.prop2=bar
+    private Optional<LibBean> myLibBean;
 
-    @Autowired(required = false) // present always if @AutoconfigureCustom is present
-    private UnconditionalBeanForCustomAutoconfiguration myUnconditionalBeanForCustomAutoconfiguration;
+    @Autowired // present always if @AutoconfigureCustom is present
+    private Optional<UnconditionalBeanForCustomAutoconfiguration> myUnconditionalBeanForCustomAutoconfiguration;
 
     public String getOptionalBean() {
-        if (optionalBean == null) {
-            return "** not autowired **";
-        }
-        return optionalBean.toString();
+        return optionalBean.map(Object::toString).orElse("** not autowired **");
     }
 
     public String getMyLibBean() {
-        if (myLibBean == null) {
-            return "** not autowired **";
-        }
-        return myLibBean.toString();
+        return myLibBean.map(Object::toString).orElse("** not autowired **");
     }
 
     public String getMyUnconditionalBeanForCustomAutoconfiguration() {
-        if (myUnconditionalBeanForCustomAutoconfiguration == null) {
-            return "not autowired";
-        }
-        return myUnconditionalBeanForCustomAutoconfiguration.toString();
+        return myUnconditionalBeanForCustomAutoconfiguration.map(Object::toString).orElse("not autowired");
     }
 
     @Override

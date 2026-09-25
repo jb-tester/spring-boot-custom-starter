@@ -4,4 +4,5 @@ com.mytests.spring.customSpringBootStarter.autoConfigurations.TwoAutoConfigurati
 com.mytests.spring.customSpringBootStarter.autoConfigurations.Foo$NestedAutoConfiguration
 com.mytests.spring.customSpringBootStarter.autoConfigurations.ReplacementAutoConfiguration
 com.mytests.spring.customimportedspringbootstarter.FromOtherModuleConfiguration
+com.mytests.spring.customSpringBootStarter.autoConfigurations.ThreeAutoconfiguration
 

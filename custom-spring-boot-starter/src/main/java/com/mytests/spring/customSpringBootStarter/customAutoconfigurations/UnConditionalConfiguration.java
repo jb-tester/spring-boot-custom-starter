@@ -5,7 +5,7 @@ import com.mytests.spring.customSpringBootStarter.beans.UnconditionalBeanForCust
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class UnConditionalConfiguration {
     @Bean
     public UnconditionalBeanForCustomAutoconfiguration myUnconditionalBeanForCustomAutoconfiguration() {
